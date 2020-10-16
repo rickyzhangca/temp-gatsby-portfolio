@@ -1,3 +1,3 @@
-Uploaded for demonstration purpose. 
+Uploaded for demonstration purpose. The live site is at rickyzhang.me. Please ignore this repo.
 
-To build the projectm use `npm install` and then `npm start`.
+To build the project, use `npm install` and then `npm start`.
