@@ -1,0 +1,12 @@
+{
+  "email": {
+    "id": "emailricky",
+    "name": "Ricky",
+    "url": "mailto:ricky.zhang@queensu.ca"
+  },
+  "github": {
+    "id": "githubricky",
+    "name": "rickyzhangca",
+    "url": "https://github.com/rickyzhangca"
+  }
+}

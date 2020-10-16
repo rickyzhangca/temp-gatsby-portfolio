@@ -1,0 +1,344 @@
+@charset "utf-8";
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+$mobile: 768px;
+
+/*------------------------------------*\
+  #LIBS
+\*------------------------------------*/
+
+// Bulma Components
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/components/media.sass";
+@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/elements/box.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/content.sass";
+@import "~bulma/sass/elements/form.sass";
+@import "~bulma/sass/elements/tag.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/grid/columns.sass";
+@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/layout/section.sass";
+
+// margin instead of padding
+.section {
+  margin: 3rem 1.5rem;
+  padding: 0;
+}
+
+$postify-font-size: 16px;
+$postify-color-link-hover: $text;
+$postify-color-link: $link;
+
+@import './postify';
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+.title {
+  font-size: 1.5rem;
+}
+
+.preview-compatible-image {
+  border-radius: 5px;
+}
+
+.post-hreo-foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5em;
+  color: $dark;
+  
+  a {
+    @extend .is-size-7-mobile;
+    display: inline-block;
+    margin-right: 0.5em;
+    color: currentColor;
+    
+    &:hover {
+      color: $link;
+    }
+  }
+}
+
+.site-footer {
+  background-color: #1e1d1d;
+  padding: 13px 13px;
+  color: #666;
+  padding-top: 50px;
+}
+
+.site-description {
+  margin-bottom: 6px;
+  padding-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  
+  &::before {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 5px;
+    margin: 0 auto 25.2px;
+    background-color: $info;
+  }
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    margin: 13px auto;
+    height: 1px;
+    background: $grey-dark;
+    transform: scaleY(0.5);
+  }
+}
+
+.copyright {
+  text-align: center;
+  
+  @media screen and (max-width: $mobile) {
+    font-size: 0.9em;
+  }
+}
+
+
+.gatsby-highlight {
+  padding: 2em 1.5em;
+  border-radius: 5px;
+  
+  pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+    font-size: inherit;
+    
+    &>code {
+      position: relative;
+      white-space: inherit;
+      font-size: inherit;
+    }
+  }
+  
+  .line-numbers-rows {
+    width: 2em !important;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    letter-spacing: -1px;
+    border-right: 1px #404040 solid;
+    user-select: none;
+    
+    &>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber;
+      
+      &::before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+    }
+  }
+  
+  // fix bulma conflict
+  .tag {
+    display: inline;
+    font-size: 1em;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    line-height: 24px;
+    white-space: pre;
+  }
+  
+  @media screen and (max-width: $mobile) {
+    margin: 0 -1.5rem;
+    padding: 2em 0.5em;
+    border-radius: 0;
+    font-size: 14px;
+    
+    pre[class*="language-"].line-numbers {
+      padding: 0 1em 0 2.8em;
+    }
+  }
+}
+
+.post-toc {
+  padding: 1em;
+  border-left: 5px solid $grey-lighter;
+  background: $light;
+  
+  p, ul {
+    margin: 0;
+  }
+  
+  @media screen and (max-width: $mobile) {
+    padding: 1em 0;
+  }
+}
+
+.auto-anchor {
+  border: none !important;
+  position: relative;
+  top: -3px;
+  
+  svg {
+    fill: $text;
+    
+    @media screen and (max-width: $tablet) {
+      fill: $grey-light;
+      visibility: visible !important;
+    }
+  }
+}
+
+/*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+
+.is-link-reverse {
+  color: $dark;
+  
+  &:hover {
+    color: $link;
+  }
+}
+
+// with gatsby image as background
+
+.hero.is-dark .navbar-item, .hero.has-gatsby-img .navbar-item, .hero.is-dark .navbar-link, .hero.has-gatsby-img .navbar-link {
+  color: rgba(0,0,0,1) !important;
+}
+
+.hero.has-gatsby-img {
+  @extend .is-fullheight;
+  @extend .is-dark;
+  position: relative;
+  color: #000;
+  
+  .navbar-item {
+    @media screen and (max-width: $mobile) {
+      color: rgba(0,0,0,1) !important;
+    }
+  }
+  
+  .navbar-item:hover {
+    background-color:  rgba(0,0,0,0.1) !important;
+  }
+    
+  .navbar-menu.is-active {
+    background-color:  rgba(0,0,0,1) !important;
+  }
+  
+  .hero-body {
+    align-items: flex-start !important;
+  }
+  
+  .hero-foot {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .gatsby-image-wrapper {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+  }
+}
+
+.hero.has-trianglify {
+  @extend .is-fullheight;
+  position: relative;
+  
+  .navbar-item:hover {
+    background-color: rgb(219, 219, 219) !important;
+  }
+
+  .navbar-burger {
+    color: $white;
+  }
+  
+  .navbar-menu.is-active {
+    background-color: rgb(219, 219, 219) !important;
+  }
+  
+  .hero-foot {
+    position: relative;
+    z-index: 10;
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-height: auto;
+
+    .hero-body {
+      display: block;
+      padding-bottom: 9rem;
+      padding-top: 9rem;
+    }
+  }
+}
+
+.trianglify-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  animation: 0.5s trianglify-show ;
+}
+
+@keyframes trianglify-show {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+// do not push element down on touch device
+.navbar-menu.is-active {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+}
+
+.is-paddingless-top {
+  padding-top: 0 !important;
+}
+
+.is-justified-center {
+  justify-content: center !important;
+}
+
+.is-aligned-center {
+  align-items: center !important;
+}
+
+@media screen and (max-width: $mobile) {
+  .is-marginless-mobile {
+    margin: 0 !important;
+  }
+  
+  .is-marginless-top-mobile {
+    margin-top: 0 !important;
+  }
+
+  .is-paddingless-mobile {
+    padding: 0 !important;
+  }
+}

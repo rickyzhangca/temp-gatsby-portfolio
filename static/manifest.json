@@ -1,0 +1,11 @@
+{
+  "name": "rickyzhangca",
+  "icons": [
+    {
+      "src": "/images/favicon/favicon.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "1.0"
+    }
+  ]
+}
